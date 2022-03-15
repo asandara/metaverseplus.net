@@ -49,7 +49,7 @@ const OurServices = () => {
   });
   return (
     <div>
-      <div className="container p-4 text-white">
+      <div className="container py-5 px-4 text-white">
         <Meta
           title="Our Services"
           description=" We offer expert services ranging from Concept Design to complete
@@ -61,7 +61,7 @@ const OurServices = () => {
         />
         <div
           className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white" +
+            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
             opacity
           }
         >

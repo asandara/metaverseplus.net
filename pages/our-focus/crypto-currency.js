@@ -48,7 +48,7 @@ const Blockchain = () => {
   });
   return (
     <div>
-      <div className="container p-4 text-white">
+      <div className="container py-5 px-4 text-white">
         <Meta
           title="Cryptocurrency"
           description="The centralized nature and some other problems of fiat necessitated
@@ -60,7 +60,7 @@ const Blockchain = () => {
         />
         <div
           className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white" +
+            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
             opacity
           }
         >

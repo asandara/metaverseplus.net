@@ -105,18 +105,15 @@ export default function Home() {
     <div>
       <div className="text-white">
         <Meta title="Metaverse Plus" />
-        <div
-          className={
-            "container p-4 md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky text-white" +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container px-4 md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
         <div className="home_bg -translate-y-20 ">
           <div className="h-full flex items-center container p-4">

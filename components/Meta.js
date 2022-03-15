@@ -13,7 +13,7 @@ const Meta = ({ title, keywords, description }) => {
       <meta charSet="utf-8" />
       <link
         rel="icon"
-        href="/logo-to-tapbar-16-by-16-whitemode.png"
+        href="./logo.svg"
         media="(prefers-color-scheme: light)"
       />
 
