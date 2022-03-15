@@ -49,26 +49,23 @@ const AboutUs = () => {
   });
   return (
     <div>
-      <div className="container py-5 px-4 text-white">
-        <Meta title="About Us" />
-        <div
-          className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+      <div className="text-white">
+        <Meta title="Metaverse Plus" />
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
         <div
-          className="w-full overflow-hidden relative"
+          className="container w-full overflow-hidden relative"
           style={{ maxHeight: "75vh" }}
         >
-          <div className="flex text-white space-x-4 text-left font-semibold absolute top-0 left-0 my-2 mx-4">
+          <div className=" flex text-white space-x-4 text-left font-semibold absolute top-0 left-0 my-2 mx-4">
             <Link href="/">Home</Link>
             <span>{">"}</span>
             <Link href="/about">About Us</Link>
@@ -77,7 +74,7 @@ const AboutUs = () => {
         </div>
         <br />
         <br />
-        <div className="md:full w-11/12">
+        <div className="container md:full w-11/12">
           <h1 className="font-bold text-white text-left ">
             Read more about us ,
           </h1>

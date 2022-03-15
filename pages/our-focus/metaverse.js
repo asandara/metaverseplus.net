@@ -48,29 +48,20 @@ const Metaverse = () => {
   });
   return (
     <div>
-      <div className="container py-5 px-4 text-white">
-        <Meta
-          title="Metaverse"
-          description="Metaverse basically and largely can be defined as multiple
-            interconnected virtual spaces or a combination of several technology
-            elements, including virtual reality and augmented reality, aiming to
-            imitate the real world"
-        />
-        <div
-          className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+      <div className="text-white">
+        <Meta title="Metaverse Plus" />
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
         <div
-          className="w-full overflow-hidden relative"
+          className="container w-full overflow-hidden relative"
           style={{ maxHeight: "75vh" }}
         >
           <div className="flex space-x-3 text-white text-left font-semibold translate-y-9  translate-x-5 ">
@@ -84,7 +75,7 @@ const Metaverse = () => {
         </div>
         <br />
         <br />
-        <div className="md:full w-11/12">
+        <div className="container md:full w-11/12">
           <h1 className="font-bold text-white text-left ">Metaverse</h1>
           <br />
           <p className="text-left">

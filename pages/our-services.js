@@ -49,30 +49,19 @@ const OurServices = () => {
   });
   return (
     <div>
-      <div className="container py-5 px-4 text-white">
-        <Meta
-          title="Our Services"
-          description=" We offer expert services ranging from Concept Design to complete
-              Game Production. We don’t make just games, rather we make the
-              technology behind them, the absorbing concepts, the juicy
-              animations, the kicking audio, and the social draw. Our services
-              are unrivalled in the industry, and we collaborate with leading
-              players to help them achieve the best business outcomes."
-        />
-        <div
-          className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+      <div className="text-white">
+        <Meta title="Metaverse Plus" />
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
-        <center className="h-fit">
+        <center className="container h-fit">
           <div
             className="w-full overflow-hidden relative"
             style={{ maxHeight: "75vh" }}

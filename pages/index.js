@@ -106,7 +106,7 @@ export default function Home() {
       <div className="text-white">
         <Meta title="Metaverse Plus" />
         <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
-          <div className="container px-4 md:flex text-white lg:justify-between justify-end w-full">
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
             <div className="hidden lg:inline">
               <Link href="/">
                 <img src="../logo.svg" width="80%" className="cursor-pointer" />
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home_bg -translate-y-20 ">
-          <div className="h-full flex items-center container p-4">
+          <div className="h-full flex items-center container">
             <div className="text-white text-cen">
               <h1
                 className=" font-bold text-4xl mb-3"
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="relative">
           <div className="">
             <div
-              className="container p-4 grid place-items-center sm:place-items-start  mt-6 "
+              className="container grid place-items-center sm:place-items-start  mt-6 "
               id="about"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -213,7 +213,7 @@ export default function Home() {
                     early 2000s.
                   </p>
                 </div>
-                <div className=" w-1/3  items-center   md:flex hidden justify-center  sm:w-1/12 md:w-2/3">
+                <div className=" w-1/3 items-center md:flex hidden justify-center  sm:w-1/12 md:w-2/3">
                   <img
                     src="images/1.png"
                     alt="Picture of the author"
@@ -246,7 +246,7 @@ export default function Home() {
               data-aos-offset="25"
               data-aos-easing="ease-in-sine"
               data-aos-duration="800"
-              className="mb-28 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-28 lg:gap-x-14 sm:gap-x-6  lg:gap-y-0 gap-y-20 md:gap-x-8 container p-4"
+              className="mb-28 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-28 lg:gap-x-14 sm:gap-x-6  lg:gap-y-0 gap-y-20 md:gap-x-8 container"
             >
               <HomeCard
                 props={{
@@ -274,7 +274,7 @@ export default function Home() {
               />
             </div>
             <div
-              className=" grid place-items-center sm:place-items-start  container p-4"
+              className=" grid place-items-center sm:place-items-start container"
               id="air"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -330,7 +330,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="mb-52  grid place-items-center sm:place-items-start container p-4"
+              className="mb-52  grid place-items-center sm:place-items-start container"
               id="game_studio"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -401,7 +401,7 @@ export default function Home() {
               }
             </div>
             <div
-              className="  grid place-items-center sm:place-items-start container p-4"
+              className="  grid place-items-center sm:place-items-start container "
               id="Subscribe"
               data-aos="fade-up"
               data-aos-offset="200"

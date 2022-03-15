@@ -48,31 +48,20 @@ const Blockchain = () => {
   });
   return (
     <div>
-      <div className="container py-5 px-4 text-white">
-        <Meta
-          title="Cryptocurrency"
-          description="The centralized nature and some other problems of fiat necessitated
-            a new type of currency to snap people out of this limited
-            traditional currency. Cryptocurrency is a digital currency that is
-            secured by a cryptographic system. In other words, it is a form of
-            digital payment that can circulate without the need of a third party
-            or central authority"
-        />
-        <div
-          className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+      <div className="text-white">
+        <Meta title="Metaverse Plus" />
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
         <div
-          className="w-full overflow-hidden relative"
+          className="container w-full overflow-hidden relative"
           style={{ maxHeight: "75vh" }}
         >
           <div className="flex space-x-3 text-white text-left font-semibold translate-y-9  translate-x-5 ">
@@ -86,7 +75,7 @@ const Blockchain = () => {
         </div>
         <br />
         <br />
-        <div className="md:full w-11/12">
+        <div className="container md:full w-11/12">
           <h1 className="font-bold text-white text-left ">Cryptocurrency</h1>
           <br />
           <p className="text-left">

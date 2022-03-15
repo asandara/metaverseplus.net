@@ -48,32 +48,20 @@ const Blockchain = () => {
   });
   return (
     <div>
-      <div className="container py-5 px-4 text-white">
-        <Meta
-          title="Blockchain"
-          description="Blockchain is a chain of connected databases called ledgers shared
-            among computer network nodes that aims to record transactions and
-            track assets. It is a popular place to securely buy, store, and
-            trade cryptocurrencies. Blockchain records the pieces of information
-            permanently in a decentralized, secure, transparent, and difficult
-            to control way, all pieces of information are available for everyone
-            to see."
-        />
-        <div
-          className={
-            "md:flex lg:justify-between justify-end w-full top-0 pb-5 z-50 sticky bg-primary text-white bg-primary " +
-            opacity
-          }
-        >
-          <div className="hidden lg:inline">
-            <Link href="/">
-              <img src="../logo.svg" width="80%" className="cursor-pointer" />
-            </Link>
+      <div className="text-white">
+        <Meta title="Metaverse Plus" />
+        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+          <div className="container md:flex text-white lg:justify-between justify-end w-full">
+            <div className="hidden lg:inline">
+              <Link href="/">
+                <img src="../logo.svg" width="80%" className="cursor-pointer" />
+              </Link>
+            </div>
+            <Header />
           </div>
-          <Header />
         </div>
         <div
-          className="w-full overflow-hidden relative"
+          className="container w-full overflow-hidden relative"
           style={{ maxHeight: "75vh" }}
         >
           {" "}
@@ -88,7 +76,7 @@ const Blockchain = () => {
         </div>
         <br />
         <br />
-        <center className="h-fit -translate-y-5">
+        <center className="container h-fit -translate-y-5">
           <h1 className="font-bold text-white text-left ">
             Blockchain aspects
           </h1>
