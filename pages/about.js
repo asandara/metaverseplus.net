@@ -74,7 +74,7 @@ const AboutUs = () => {
         </div>
         <br />
         <br />
-        <div className="container md:full w-11/12">
+        <div className="container w-full">
           <h1 className="font-bold text-white text-left ">
             Read more about us ,
           </h1>
