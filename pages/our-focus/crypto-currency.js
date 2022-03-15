@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Meta from "../../components/Meta";
 import React from "react";
+
 import { useRef, useState, useEffect } from "react";
 const Blockchain = () => {
   const [opacity, setOpacity] = useState("bg-opacity-0");
@@ -75,11 +76,11 @@ const Blockchain = () => {
           style={{ maxHeight: "75vh" }}
         >
           <div className="flex space-x-3 text-white text-left font-semibold translate-y-9  translate-x-5 ">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <span>{">"}</span>
-            <a href="/our-focus/Blockchain">Our focus</a>
+            <Link href="/our-focus/Blockchain">Our focus</Link>
             <span>{">"}</span>
-            <a href="/our-focus/crypto-currency">Cryptocurrency</a>
+            <Link href="/our-focus/crypto-currency">Crypto Currency</Link>
           </div>
           <img src="/images/cryptocurrency.png" className="w-full" />
         </div>
@@ -121,81 +122,6 @@ const Blockchain = () => {
       </div>
       <Footer />
     </div>
-    // <div className="text-white">
-    // <Meta
-    //   title="Cryptocurrency"
-    //   description="The centralized nature and some other problems of fiat necessitated
-    //       a new type of currency to snap people out of this limited
-    //       traditional currency. Cryptocurrency is a digital currency that is
-    //       secured by a cryptographic system. In other words, it is a form of
-    //       digital payment that can circulate without the need of a third party
-    //       or central authority"
-    // />
-    //   <div
-    //     className={
-    //       "md:flex lg:justify-between justify-end w-full py-4 xl:pr-36 lg:pr-28 md:pr-20 sm:px-10 px-5 sticky top-0 z-50 bg-primary text-white " +
-    //       opacity
-    //     }
-    //   >
-    //     <div className="hidden lg:inline xl:pl-12 lg:pl-16 md:pl-20 sm:px-10 px-5 ">
-    //       <Link href="/">
-    //         <img src="../logo.svg" width="80%" className="cursor-pointer" />
-    //       </Link>
-    //     </div>
-    //     <Header />
-    //   </div>
-    //   <center className="h-fit -translate-y-5">
-    //  <div
-    //       className=" w-11/12 overflow-hidden md:pr-4"
-    //       style={{ maxHeight: "75vh" }}
-    //     >
-    // <div className="flex space-x-3 text-white text-left font-semibold translate-y-9  translate-x-5 ">
-    //   <a href="/">Home</a>
-    //   <span>{">"}</span>
-    //   <a href="/our-focus/Blockchain">Our focus</a>
-    //   <span>{">"}</span>
-    //   <a href="/our-focus/crypto-currency">Cryptocurrency</a>
-    // </div>
-    //       <img src="/images/cryptocurrency.png" height="60%" width="100%" />
-    //     </div>
-    //     <br />
-    //     <br />
-    //         <div className="md:full w-11/12">
-    //   <h1 className="font-bold text-white text-left ">Cryptocurrency</h1>
-    //   <br />
-    //   <p className="text-left">
-    //     The centralized nature and some other problems of fiat necessitated
-    //     a new type of currency to snap people out of this limited
-    //     traditional currency. Cryptocurrency is a digital currency that is
-    //     secured by a cryptographic system. In other words, it is a form of
-    //     digital payment that can circulate without the need of a third party
-    //     or central authority. It can also be defined as a digital, encoded,
-    //     and decentralized medium of exchange. Digital currencies are
-    //     exchanged with one another easily and securely. Instead, Blockchain
-    //     technology lets people trade with their currency securely. As the
-    //     traditional currency, cryptocurrency is an asset that can be traded
-    //     and bought goods with it or even invested with it. Pieces of
-    //     Information of each transaction are secured in a block within the
-    //     Blockchain. It holds them permanently, securely, transparently, and
-    //     in a decentralized process.
-    //     <br />
-    //     <br /> Cryptocurrency provides an easier way of transaction without
-    //     the requirement of a trusted third party. It is a peer-to-peer
-    //     transaction that is done between two real persons freely. Such
-    //     decentralized transfers are secured by using public keys and private
-    //     keys and different incentive systems, such as proof of work or proof
-    //     of stake.
-    //     <br />
-    //     <br /> Cryptocurrency provides virtual assets for gamers in games
-    //     that can be exchanged and traded. Hence, it offers the gaming
-    //     industry a safe and easy medium to make money and allows players to
-    //     gain money for the effort they make in the games.
-    //   </p>
-    // </div>
-    //   </center>
-    //   <br /> <br /> <br /> <br /> <br /> <br /> <br />
-    //   <Footer />
-    // </div>
   );
 };
 

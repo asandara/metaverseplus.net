@@ -119,7 +119,7 @@ export default function Home() {
           <Header />
         </div>
         <div className="home_bg -translate-y-20 ">
-          <div className="h-full flex items-center xl:pl-20 ml-3 lg:pl-32 md:pl-20 sm:pl-14 pl-7">
+          <div className="h-full flex items-center container p-4">
             <div className="text-white text-cen">
               <h1
                 className=" font-bold text-4xl mb-3"
@@ -164,7 +164,7 @@ export default function Home() {
         <div className="relative">
           <div className="">
             <div
-              className="  grid place-items-center sm:place-items-start  mt-6 mr-5 sm:mr-14  md:mr-0 xl:ml-24 lg:ml-16  md:ml-12 sm:ml-14 ml-5 "
+              className="container p-4 grid place-items-center sm:place-items-start  mt-6 "
               id="about"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -249,7 +249,7 @@ export default function Home() {
               data-aos-offset="25"
               data-aos-easing="ease-in-sine"
               data-aos-duration="800"
-              className="mb-28 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-28 lg:gap-x-14 sm:gap-x-6  lg:gap-y-0 gap-y-20 md:gap-x-8 xl:mr-24 lg:mr-16  md:mr-12 sm:mr-14 mr-5 xl:ml-24 lg:ml-16  md:ml-12 sm:ml-14 ml-5"
+              className="mb-28 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:gap-x-28 lg:gap-x-14 sm:gap-x-6  lg:gap-y-0 gap-y-20 md:gap-x-8 container p-4"
             >
               <HomeCard
                 props={{
@@ -277,7 +277,7 @@ export default function Home() {
               />
             </div>
             <div
-              className=" grid place-items-center sm:place-items-start   mr-5 sm:mr-14  md:mr-0 xl:ml-24 lg:ml-16  md:ml-12 sm:ml-14 ml-5 "
+              className=" grid place-items-center sm:place-items-start  container p-4"
               id="air"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -323,7 +323,7 @@ export default function Home() {
                     world.
                   </p>
                 </div>
-                <div className=" w-1/3    md:flex hidden   justify-start sm:w-1/12 md:w-3/4 lg:w-3/6">
+                <div className=" w-1/3    md:flex hidden justify-start sm:w-1/12 md:w-3/4 lg:w-3/6">
                   <img
                     src="images/air.png"
                     alt="Picture of the author"
@@ -333,7 +333,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="mb-52  grid place-items-center sm:place-items-start  mt-14 mr-5 sm:mr-14  md:mr-0 xl:ml-24 lg:ml-16  md:ml-12 sm:ml-14 ml-5 "
+              className="mb-52  grid place-items-center sm:place-items-start container p-4"
               id="game_studio"
               data-aos="fade-up"
               data-aos-offset="200"
@@ -404,7 +404,7 @@ export default function Home() {
               }
             </div>
             <div
-              className="  grid place-items-center sm:place-items-start  mt-14 mr-5 sm:mr-14  md:mr-0 xl:ml-24 lg:ml-16  md:ml-12 sm:ml-14 ml-5 "
+              className="  grid place-items-center sm:place-items-start container p-4"
               id="Subscribe"
               data-aos="fade-up"
               data-aos-offset="200"

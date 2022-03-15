@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Meta from "../../components/Meta";
 import React from "react";
+
 import { useRef, useState, useEffect } from "react";
 const Blockchain = () => {
   const [opacity, setOpacity] = useState("bg-opacity-0");
@@ -77,11 +78,11 @@ const Blockchain = () => {
         >
           {" "}
           <div className="flex text-white space-x-4 text-left font-semibold absolute top-0 left-0 my-2 mx-4">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <span>{">"}</span>
-            <a href="/our-focus/Blockchain">Our focus</a>
+            <Link href="/our-focus/Blockchain">Our Focus</Link>
             <span>{">"}</span>
-            <a href="/our-focus/Blockchain">Blockchain</a>
+            <Link href="/our-focus/Blockchain">Blockchain</Link>
           </div>
           <img src="/images/Blockchain.png" className="w-full" />
         </div>

@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Meta from "../../components/Meta";
 import React from "react";
+
 import { useRef, useState, useEffect } from "react";
 const Metaverse = () => {
   const [opacity, setOpacity] = useState("bg-opacity-0");
@@ -73,11 +74,11 @@ const Metaverse = () => {
           style={{ maxHeight: "75vh" }}
         >
           <div className="flex space-x-3 text-white text-left font-semibold translate-y-9  translate-x-5 ">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <span>{">"}</span>
-            <a href="/our-focus/metaverse">Our focus</a>
+            <Link href="/our-focus/metaverse">Our focus</Link>
             <span>{">"}</span>
-            <a href="/our-focus/metaverse">Metaverse</a>
+            <Link href="/our-focus/metaverse">Metaverse</Link>
           </div>
           <img src="/images/metaverse.png" className="w-full" />
         </div>

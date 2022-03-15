@@ -69,9 +69,9 @@ const AboutUs = () => {
           style={{ maxHeight: "75vh" }}
         >
           <div className="flex text-white space-x-4 text-left font-semibold absolute top-0 left-0 my-2 mx-4">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <span>{">"}</span>
-            <a href="/about">About Us</a>
+            <Link href="/about">About Us</Link>
           </div>
           <img src="/images/back.png" className="w-full" />
         </div>
