@@ -67,7 +67,7 @@ export default function Layout({ children, title, description }) {
           name="keywords"
           content="Gaming , Game , Game Of Tank , Metaverse , Metaverse Game , Metaverse Game Of Tank , Metaverse Game Of Tank , Blockchain , Coin , Game Studio , Unreal Engine , Metaverse Plus , Marketplace"
         />
-        <meta name="theme-color" content="#5521B5" />
+        <meta name="theme-color" content="#151F40" />
       </Head>
       <div className="text-white">
         <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>

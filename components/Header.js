@@ -26,6 +26,22 @@ const customStyles = {
     borderColor: "#00000000",
   },
 };
+const customStyles2 = {
+  content: {
+    padding: "0px",
+    top: "50%",
+    border: "none",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    width: "30%",
+    minWidth: "350px",
+    borderRadius: "10px",
+    marginRight: "-50%",
+    backgroundColor: "transparent",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 Modal.setAppElement("#rooot");
 
@@ -105,6 +121,53 @@ const Header = () => {
     AOS.refresh();
   }, []);
   const [showModal, setShowModal] = React.useState(false);
+
+  // nashwan.........................................................
+  const [modalIsOpen2, setIsOpen2] = React.useState(false);
+  let [currentLenghtNow, setCurrentLenghtNow] = React.useState(0);
+  let [emailContact, setEmailContact] = React.useState("");
+  let [messageContact, setMessageContact] = React.useState("");
+  function is_Empty(x) {
+    return (
+      typeof x == "undefined" ||
+      x == null ||
+      x == false ||
+      x.length == 0 ||
+      x == 0 ||
+      x == "" ||
+      x.replace(/\s/g, "") == "" ||
+      !/[^\s]/.test(x) ||
+      /^\s*$/.test(x)
+    );
+  }
+  function is_Email(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  async function contact() {
+    if (is_Empty(emailContact) || is_Empty(messageContact)) {
+      errorMessage("Please fill all fields", true);
+      return;
+    }
+    if (is_Email(emailContact) == false) {
+      errorMessage("Please enter a valid email", true);
+      return;
+    }
+    const res = await fetch(window.location.origin + "/api/contact", {
+      body: JSON.stringify({
+        email: emailContact,
+        message: messageContact,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+    errorMessage("Thank you for your request !", false);
+    setIsOpen2(false);
+    setEmailContact(null);
+    setMessageContact(null);
+  }
+  // end nashwan.........................................................
   return (
     <div
       className={
@@ -141,11 +204,13 @@ const Header = () => {
           </h6>
         </Link>
 
-        <Link href="./#contact-us">
-          <h6 className="cursor-pointer" style={{ fontSize: "17px" }}>
-            Contact us
-          </h6>
-        </Link>
+        <h6
+          onClick={() => setIsOpen2(true)}
+          className="cursor-pointer"
+          style={{ fontSize: "17px" }}
+        >
+          Contact us
+        </h6>
         <button
           onClick={openModal}
           className="bg-gradient-to-r from-purple-800 to-purple-900 py-2 px-12 rounded-sm cursor-pointer flex items-center"
@@ -253,22 +318,99 @@ const Header = () => {
                   Our services
                 </h6>
               </Link>
-
-              <Link href="#contact-us">
-                <h6
-                  className="cursor-pointer"
-                  onClick={() => {
-                    setNavbarOpen(false);
-                    enableBodyScroll(targetElement);
-                  }}
-                >
-                  Contact us
-                </h6>
-              </Link>
+              <h6
+                className="cursor-pointer"
+                onClick={() => {
+                  setNavbarOpen(false);
+                  enableBodyScroll(targetElement);
+                  setIsOpen2(true);
+                }}
+              >
+                Contact us
+              </h6>
             </div>
           </center>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen2}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={() => {
+          setIsOpen2(false);
+        }}
+        style={customStyles2}
+        contentLabel="Contact"
+        overlayClassName="Overlay"
+      >
+        <div className="relative">
+          <img
+            src="contact.png"
+            className="w-full h-98 md:h-full"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <button
+            onClick={() => setIsOpen2(false)}
+            className="absolute cursor-pointer top-0 right-0 m-3 z-10"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+          <div className="fixed top-0 flex items-center h-full w-full p-10">
+            <div className="w-full">
+              <p className="text-white mt-20 md:mt-0 text-2xl font-extrabold">
+                Contact us
+              </p>
+              <p className="text-white my-5">
+                Your messages create new news for us
+              </p>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                onChange={(e) => setEmailContact(e.target.value)}
+                className="w-full p-4 border-b-2 border-white bg-transparent text-white outline-none"
+              />
+              <div className="flex items-center border-b-2 my-10 border-white ">
+                <input
+                  id="message"
+                  onChange={(e) => {
+                    setCurrentLenghtNow(e.target.value.length);
+                    setMessageContact(e.target.value);
+                  }}
+                  type="text"
+                  placeholder="Your message"
+                  className="w-full p-4 bg-transparent outline-none text-white"
+                  maxLength={255}
+                />
+                <span className="text-zinc-400">{255 - currentLenghtNow}</span>
+              </div>
+              <button
+                onClick={() => {
+                  contact();
+                }}
+                className="p-4 mt-4 md:mt-20 outline-none text-white bg-purple-600 w-full"
+              >
+                Send message
+              </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
 
       <Modal
         isOpen={modalIsOpen}
