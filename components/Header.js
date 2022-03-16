@@ -3,7 +3,6 @@ import AOS from "aos";
 import { useRef, useState, useEffect } from "react";
 import "aos/dist/aos.css";
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 import Modal from "react-modal";
 import { useSnackbar } from "notistack";
@@ -28,7 +27,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#rooot");
 
 const Header = () => {
