@@ -2,7 +2,7 @@ import Link from "next/link";
 import AOS from "aos";
 import { useRef, useState, useEffect } from "react";
 import "aos/dist/aos.css";
-const Footer = () => {
+const Footer = (props) => {
   useEffect(() => {
     AOS.init({
       duration: 3000,
@@ -22,13 +22,13 @@ const Footer = () => {
       {" "}
       <div className="mb-9 hidden sm:block justify-center absolute bottom-40 left-1/2 transform -translate-x-44 sm:-translate-y-1/2 -translate-y-9">
         <Link href="/">
-                    <img src="../logo.svg"/>
+          <img src="../logo.svg" />
         </Link>
       </div>
       <div className="mx-auto px-5 sm:px-0  w-full text-white sm:flex sm:gap-y-0  justify-center absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:-translate-y-1/2 -translate-y-9">
         <div className="mb-9 sm:hidden">
           <Link href="/">
-                              <img src="../logo.svg" width="300px"/>
+            <img src="../logo.svg" width="300px" />
           </Link>
         </div>
         <div className="text-left sm:mr-20 mr-10 xl:mr-24 sm:mb-0 mb-6">
@@ -40,16 +40,16 @@ const Footer = () => {
             <h6 className="cursor-pointer font-bold">Our services</h6>
           </Link>
           <div className="h-5"></div>
-          <Link href="#contact-us">
-            <h6 className="cursor-pointer font-bold">Contact us</h6>
-          </Link>
+          <h6 onClick={props.setIsOpen2} className="cursor-pointer font-bold">
+            Contact us
+          </h6>
         </div>
         <div className="text-left mt-10 sm:mt-0">
           <h1 className="font-bold">Headquater :</h1>{" "}
           <div className="h-1"></div>
           <h1 className="text-sm">
-            Ompus Tower- Al A'amal St - Business Bay<br/> Dubai - United Arab
-            Emirates
+            Ompus Tower- Al A'amal St - Business Bay
+            <br /> Dubai - United Arab Emirates
           </h1>
           <div className="h-4"></div>
           <div className="flex  space-x-5">
