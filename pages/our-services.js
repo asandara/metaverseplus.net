@@ -21,7 +21,10 @@ const OurServices = () => {
             <span>{">"}</span>
             <Link href="/our_services">Our Services</Link>
           </div>
-          <img src="/images/our_services.png" className="w-full" />
+          <img
+            src="/images/our_services.png"
+            className="w-full h-98 md:h-auto object-cover"
+          />
 
           <div className="align-text-bottom sm:pl-12 pl-4 absolute bottom-0">
             <h1 className="font-bold text-white text-left text-2xl">
