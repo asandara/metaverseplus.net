@@ -81,8 +81,8 @@ export default async function handler(req, res) {
 async function sendEmail(to) {
   const transporter = nodemailer.createTransport({
     host: "mail.privateemail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: "info@metaverseplus.studio",
       pass: "@2zzpWE6*D3DhinoD!h",
