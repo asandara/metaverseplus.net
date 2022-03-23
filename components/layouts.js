@@ -548,7 +548,7 @@ export default function Layout({ children, title, description }) {
                     onClick={() => {
                       contact();
                     }}
-                    className="p-4 mt-4 md:mt-20 outline-none text-white bg-purple-600 w-full"
+                    className="p-4 mt-4 md:mt-20 outline-none rounded text-white bg-purple-600 w-full"
                   >
                     Send message
                   </button>
