@@ -21,14 +21,14 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <ChakraProvider>
-      <SnackbarProvider maxSnack={3}>
+    <SnackbarProvider maxSnack={3}>
+      <ChakraProvider>
         <div id="rooot">
           <Loading isLoading={loading} />
           {loading == false && <Component {...pageProps} />}
         </div>
-      </SnackbarProvider>
-    </ChakraProvider>
+      </ChakraProvider>
+    </SnackbarProvider>
   );
 }
 
