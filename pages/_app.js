@@ -3,6 +3,8 @@ import Loading from "../components/loading/Loading";
 import React, { useState, useEffect } from "react";
 import { useRouter, Router } from "next/router";
 import { SnackbarProvider } from "notistack";
+import { ChakraProvider } from "@chakra-ui/react";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -19,12 +21,14 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <SnackbarProvider maxSnack={3}>
-      <div id="rooot">
-        <Loading isLoading={loading} />
-        {loading == false && <Component {...pageProps} />}
-      </div>
-    </SnackbarProvider>
+    <ChakraProvider>
+      <SnackbarProvider maxSnack={3}>
+        <div id="rooot">
+          <Loading isLoading={loading} />
+          {loading == false && <Component {...pageProps} />}
+        </div>
+      </SnackbarProvider>
+    </ChakraProvider>
   );
 }
 

@@ -9,6 +9,15 @@ import axios from "axios";
 import Modal from "react-modal";
 import { useSnackbar } from "notistack";
 import {
+  Modal as M,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+import {
   disableBodyScroll,
   enableBodyScroll,
   clearAllBodyScrollLocks,
@@ -36,10 +45,10 @@ const customStyles = {
 const customStyles2 = {
   content: {
     position: "fixed",
+    overflow: "hidden",
     zIndex: "9999",
     padding: "0px",
     top: "50%",
-    overflow: "hidden",
     border: "none",
     left: "50%",
     right: "auto",
@@ -48,7 +57,7 @@ const customStyles2 = {
     minWidth: "350px",
     borderRadius: "10px",
     marginRight: "-50%",
-    backgroundColor: "transparent",
+    backgroundColor: "black",
     transform: "translate(-50%, -50%)",
   },
 };
@@ -238,7 +247,7 @@ export default function Layout({ children, title, description }) {
         <meta name="theme-color" content="#151F40" />
       </Head>
       <div className="text-white">
-        <div className={"top-0 py-5 z-50 sticky  bg-primary " + opacity}>
+        <div className={"top-0 py-5 z-10 sticky  bg-primary " + opacity}>
           <div className="container md:flex text-white lg:justify-between justify-end w-full">
             <div className="hidden lg:inline">
               <Link href="/">
@@ -300,7 +309,6 @@ export default function Layout({ children, title, description }) {
                   (navbarOpen ? "hidden" : " ")
                 }
               >
-                {" "}
                 <div
                   onClick={() => {
                     setNavbarOpen(!navbarOpen);
@@ -323,7 +331,10 @@ export default function Layout({ children, title, description }) {
                   </svg>
                 </div>
                 <button
-                  onClick={openModal}
+                  onClick={() => {
+                    openModal();
+                    setIsOpen2(false);
+                  }}
                   className="bg-gradient-to-r from-purple-800 to-purple-900 py-1.5 px-9 rounded-sm cursor-pointer flex  items-center"
                 >
                   <h4 className="text-sm mr-3">Subscribe</h4>
@@ -400,6 +411,7 @@ export default function Layout({ children, title, description }) {
                           setNavbarOpen(false);
                           enableBodyScroll(targetElement);
                           setIsOpen2(true);
+                          closeModal();
                         }}
                       >
                         Contact us
@@ -408,143 +420,143 @@ export default function Layout({ children, title, description }) {
                   </center>
                 </div>
               </div>
-              <Modal
-                isOpen={modalIsOpen2}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={() => {
-                  setIsOpen2(false);
-                }}
-                style={customStyles2}
-                contentLabel="Contact"
-                overlayClassName="Overlay"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src="contact.png"
-                    className="w-full h-98 xl:h-full"
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-                  <button
-                    onClick={() => setIsOpen2(false)}
-                    className="absolute cursor-pointer top-0 right-0 m-3 z-10"
-                  >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
-                  </button>
-                  <div className="fixed top-0 flex items-center h-full w-full p-10">
-                    <div className="w-full">
-                      <p className="text-white mt-20 md:mt-0 text-2xl font-extrabold">
-                        Contact us
-                      </p>
-                      <p className="text-white my-5">
-                        Your messages create new news for us
-                      </p>
-
-                      <input
-                        type="email"
-                        id="email"
-                        placeholder="Your Email"
-                        onChange={(e) => setEmailContact(e.target.value)}
-                        className="w-full p-4 border-b-2 border-white bg-transparent text-white outline-none"
-                      />
-                      <div className="flex items-center border-b-2 my-10 border-white ">
-                        <input
-                          id="message"
-                          onChange={(e) => {
-                            setCurrentLenghtNow(e.target.value.length);
-                            setMessageContact(e.target.value);
-                          }}
-                          type="text"
-                          placeholder="Your message"
-                          className="w-full p-4 bg-transparent outline-none text-white"
-                          maxLength={255}
-                        />
-                        <span className="text-zinc-400">
-                          {255 - currentLenghtNow}
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => {
-                          contact();
-                        }}
-                        className="p-4 mt-4 md:mt-20 outline-none text-white bg-purple-600 w-full"
-                      >
-                        Send message
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </Modal>
-
-              <Modal
-                isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-                overlayClassName="Overlay"
-              >
-                <div className="">
-                  <button onClick={closeModal}>
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
-                  </button>
-
-                  <div className="w-full grid place-items-center py-4">
-                    <div className="w-3/4 ">
-                      <div className="relative bg-transparent py-1.5 border-b-1 border-white border-opacity-40 w-full  flex items-center">
-                        <input
-                          type="email"
-                          placeholder="Your Email"
-                          className="text-white py-1 placeholder-airdropMainColor placeholder-opacity-40  text-airdropMainColor bg-transparent border-0 w-full border-transparent outline-none"
-                          style={{ fontSize: "14px" }}
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
-                      </div>
-
-                      <div className="h-6"></div>
-                      <button
-                        className={
-                          "text-white text-sm w-full bg-gradient-to-r from-purple-800 to-purple-900 py-2 px-7 rounded-sm cursor-pointer " +
-                          (isDisable && "opacity-40 cursor-not-allowed")
-                        }
-                        onClick={() => isDisable == false && sendEmail()}
-                      >
-                        Subscribe
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </Modal>
             </div>
           </div>
         </div>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+          overlayClassName="Overlay"
+        >
+          <div className="">
+            <button onClick={closeModal}>
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+
+            <div className="w-full grid place-items-center py-4">
+              <div className="w-3/4 ">
+                <div className="relative bg-transparent py-1.5 border-b-1 border-white border-opacity-40 w-full  flex items-center">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="text-white py-1 placeholder-airdropMainColor placeholder-opacity-40  text-airdropMainColor bg-transparent border-0 w-full border-transparent outline-none"
+                    style={{ fontSize: "14px" }}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div className="h-6"></div>
+                <button
+                  className={
+                    "text-white text-sm w-full bg-gradient-to-r from-purple-800 to-purple-900 py-2 px-7 rounded-sm cursor-pointer " +
+                    (isDisable && "opacity-40 cursor-not-allowed")
+                  }
+                  onClick={() => isDisable == false && sendEmail()}
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </Modal>
+        <M
+          onClose={() => {
+            setIsOpen2(false);
+          }}
+          size={"xl"}
+          isOpen={modalIsOpen2}
+          isCentered
+        >
+          <ModalOverlay />
+          <ModalContent backgroundColor={"transparent"} padding={"5"}>
+            <ModalBody
+              backgroundImage={"contact.png"}
+              backgroundSize={"cover"}
+              borderRadius="xl"
+              position={"relative"}
+            >
+              <button
+                onClick={() => {
+                  setIsOpen2(false);
+                }}
+                className="absolute cursor-pointer top-0 right-0 m-3 z-10"
+              >
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+              <div className="h-max pb-10 mt-40 xl:h-full">
+                <div className="w-full">
+                  <p className="text-white mt-20 md:mt-0 text-2xl font-extrabold">
+                    Contact us
+                  </p>
+                  <p className="text-white my-5">
+                    Your messages create new news for us
+                  </p>
+
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    onChange={(e) => setEmailContact(e.target.value)}
+                    className="w-full p-4 border-b-1 border-white bg-transparent text-white outline-none"
+                  />
+                  <div className="flex items-center border-b-1 my-10 border-white ">
+                    <input
+                      id="message"
+                      onChange={(e) => {
+                        setCurrentLenghtNow(e.target.value.length);
+                        setMessageContact(e.target.value);
+                      }}
+                      type="text"
+                      placeholder="Your message"
+                      className="w-full p-4 bg-transparent outline-none text-white"
+                      maxLength={255}
+                    />
+                    <span className="text-zinc-400">
+                      {255 - currentLenghtNow}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => {
+                      contact();
+                    }}
+                    className="p-4 mt-4 md:mt-20 outline-none text-white bg-purple-600 w-full"
+                  >
+                    Send message
+                  </button>
+                </div>
+              </div>
+            </ModalBody>
+          </ModalContent>
+        </M>
         {children}
       </div>
       <div className="mt-40"></div>

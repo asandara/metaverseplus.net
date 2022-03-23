@@ -64,7 +64,7 @@ export default function Home() {
   });
   return (
     <Layout>
-      <div className="home_bg -translate-y-20 ">
+      <div className="home_bg -translate-y-20">
         <div className="h-full flex items-center container">
           <div className="text-white text-cen">
             <h1
@@ -75,10 +75,10 @@ export default function Home() {
               data-aos-duration="500"
             >
               Metaverse Plus
-            </h1>{" "}
+            </h1>
+
             <p
-              className="xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-9/12 w-11/12 mb-7 "
-              data-aos="fade-left"
+              className="break-all w-auto lg:w-5/12 my-10"
               data-aos-offset="200"
               data-aos-easing="ease-in-sine"
               data-aos-duration="500"
@@ -340,9 +340,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {
-            //
-          }
         </div>
         <div
           className="  grid place-items-center sm:place-items-start container "
@@ -418,7 +415,6 @@ export default function Home() {
           </center>
         </div>
       </div>
-      <div className="mt-40"></div>
     </Layout>
   );
 }
