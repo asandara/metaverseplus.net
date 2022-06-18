@@ -78,7 +78,7 @@ function SocialIcon() {
           </g>
         </svg>
       </Link>
-      <Link href="https://t.me/+971501925188" target="_blank">
+      <Link href="https://t.me/+971502107098" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="38"
@@ -132,7 +132,7 @@ function SocialIcon() {
         </svg>
       </Link>
       <Link
-        href="https://api.whatsapp.com/send?phone=+9715019251888"
+        href="https://wa.link/r8r8os"
         target="_blank"
       >
         <img

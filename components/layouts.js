@@ -242,7 +242,8 @@ export default function Layout({ children, title, description }) {
 
         <meta
           name="keywords"
-          content="Gaming , Game , Game Of Tank , Metaverse , Metaverse Game , Metaverse Game Of Tank , Metaverse Game Of Tank , Blockchain , Coin , Game Studio , Unreal Engine , Metaverse Plus , Marketplace"
+          content="Gaming , Game , Metaverse battle game , Metaverse , Metaverse Game , MBG , Blockchain , Coin , Game Studio , Unreal Engine , Metaverse Plus , Marketplace,
+          Information Technology Company"
         />
         <meta name="theme-color" content="#151F40" />
       </Head>
@@ -267,7 +268,7 @@ export default function Layout({ children, title, description }) {
               >
                 <Link href="/">
                   <h6
-                    className="cursor-pointer hidden md:inline lg:hidden "
+                    className="cursor-pointer hidden md:inline lg:hidden hover:text-purple-300"
                     style={{ fontSize: "17px" }}
                     onClick={() => setNavbarOpen(false)}
                   >
@@ -276,22 +277,22 @@ export default function Layout({ children, title, description }) {
                 </Link>
                 <Link href="/about">
                   <h6
-                    className="cursor-pointer "
+                    className="cursor-pointer hover:text-purple-300"
                     style={{ fontSize: "17px" }}
                     onClick={() => setNavbarOpen(false)}
                   >
                     About us
                   </h6>
                 </Link>
-                <Link href="/our-services">
-                  <h6 className="cursor-pointer" style={{ fontSize: "17px" }}>
+                <Link href="/our-services ">
+                  <h6 className="cursor-pointer hover:text-purple-300" style={{ fontSize: "17px" }}>
                     Our services
                   </h6>
                 </Link>
 
                 <h6
                   onClick={() => setIsOpen2(true)}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:text-purple-300"
                   style={{ fontSize: "17px" }}
                 >
                   Contact us
