@@ -234,13 +234,7 @@ export default function Layout({ children, title, description }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
         <link rel="icon" href="/meta.png" />
-        <link
-          rel="icon"
-          href="./logo.svg"
-          media="(prefers-color-scheme: dark)"
-        />
-
-        <meta
+               <meta
           name="keywords"
           content="Gaming , Game , Metaverse battle game , Metaverse , Metaverse Game , MBG , Blockchain , Coin , Game Studio , Unreal Engine , Metaverse Plus , Marketplace,
           Information Technology Company"
