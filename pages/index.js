@@ -238,7 +238,8 @@ export default function Home() {
 
           <br />
 
-          <div className="flex md:mt-10 md:w-11/12 xl:w-full text-white justify-start ">
+        <div className="flex md:mt-10 md:w-11/12 xl:w-full text-white justify-start ">
+            
             <div className=" md:w-2/3 md:place-items-start md:block grid place-items-center ">
               <h1 className="text-2xl font-bold   md:mb-7 mb-6 md:text-left text-center">
                 Bring you to the metaverse world
@@ -265,6 +266,7 @@ export default function Home() {
                 into the metaverse world.
               </p>
             </div>
+
             <div className=" w-1/3    md:flex hidden justify-start sm:w-1/12 md:w-3/4 lg:w-3/6">
               <img
                 src="images/air.png"
@@ -273,7 +275,136 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+
+
+        <div
+          className="mb-28  grid place-items-center sm:place-items-start container"
+          id="game_studio"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="1000"
+        >
+          <center>
+            <img
+              src="images/DigitalMarketing.png"
+              alt="Picture of the author"
+              height="90%"
+              width="90%"
+              className="md:hidden mt-20"
+            />
+          </center>
+
+          <br />
+          
+          <div className="flex md:mt-10 md:w-11/12 xl:w-full text-white justify-start items-center ">
+            <div className=" w-1/3    md:flex hidden   justify-end sm:w-1/12 md:w-2/3">
+              <img
+                src="images/DigitalMarketing.png"
+                alt="Picture of the author"
+                className=" lg:w-full xl:w-5/6 xl:-translate-x-24 lg:-translate-x-10 lg:-translate-y-10 xl:-translate-y-0   "
+              />
+            </div>
+            <div className=" md:w-2/3 md:place-items-start md:block grid place-items-center lg:translate-x-10 xl:translate-x-0">
+              <h1 className="text-3xl font-bold   md:mb-7 mb-6 md:text-left text-center">
+                 Digital 
+                <br /> Marketing
+              </h1>
+              <p
+                className={
+                  "w-full lg:w-10/12 leading-8 md:mb-0   md:text-left text-center  "
+                }
+              >
+               At MetaversePlus , we perform digital marketing with all its services. This is one of the smartest ways of marketing for 
+               people who want to expand their business professionally. Digital Marketing is a very essential tool if people know how to 
+               use it in a right way, but with Metaverseplus , you don’t need to worry as we can take care of your Digital Marketing professionally. 
+               This type of marketing involves using social media , website , search engines, and other similar digital medias. Digital marketing requires 
+               marketing to customers through any types and amounts of digital media. Digital Marketing is mostly used through Social media platforms and website platforms.
+
+              </p>
+
+              <Link href="/our-services">
+                <div
+                  className="border-1 border-white py-2 w-52 text-sm rounded-sm cursor-pointer button  button01 mt-10 "
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="1000"
+                >
+                  <center>
+                    <h6 className="font-bold">Our services</h6>
+                  </center>
+                </div>
+              </Link>
+            </div>
+          </div>
+      </div>
+      </div>
+
+      <div
+          className="mb-28  grid place-items-center sm:place-items-start container"
+          id="game_studio"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="1000"
+        >
+          <center>
+            <img
+              src="images/it.png"
+              alt="Picture of the author"
+              height="90%"
+              width="90%"
+              className="md:hidden "
+            />
+          </center>
+
+          <br />
+          
+          <div className="flex md:mt-10 md:w-11/12 xl:w-full text-white justify-start items-center ">
+            <div className=" md:w-2/3 md:place-items-start md:block grid place-items-center lg:translate-x-10 xl:translate-x-0">
+              <h1 className="text-3xl font-bold   md:mb-7 mb-6 md:text-left text-center">
+                 IT-SOLUTION
+                <br /> SERVICES
+              </h1>
+              <p
+                className={
+                  "w-full lg:w-10/12 leading-8 md:mb-0   md:text-left text-center  "
+                }
+              >
+              Information Technology (IT) department in a company provides IT solution services for clients. At Metaverseplus -IT Solution, 
+              we work to establish good networking and maintenance. We also can create specific effective business applications for our clients 
+              that will be a very beneficial tool for the growth of their business. Metaverseplus can provide Information Technology services in 
+              business through our skillful team to solute the clients requirements.
+              </p>
+
+              <Link href="/our-services">
+                <div
+                  className="border-1 border-white py-2 w-52 text-sm rounded-sm cursor-pointer button  button01 mt-10 "
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="1000"
+                >
+                  <center>
+                    <h6 className="font-bold">Our services</h6>
+                  </center>
+                </div>
+              </Link>
+            </div>
+            <div className=" w-1/3    md:flex  justify-end sm:w-1/12 md:w-2/3">
+              <img
+                src="images/it.png"
+                alt="Picture of the author"
+                className=" lg:w-full xl:w-5/6 xl:-translate-x-24 lg:-translate-x-10 lg:-translate-y-10 xl:-translate-y-0   "
+              />
+            </div>
+         </div>
+          </div>
+       
+       
+       
+       
         <div
           className="mb-52  grid place-items-center sm:place-items-start container"
           id="game_studio"
@@ -288,14 +419,14 @@ export default function Home() {
               alt="Picture of the author"
               height="90%"
               width="90%"
-              className="md:hidden mt-20"
+              className="md:hidden"
             />
           </center>
 
           <br />
 
-          <div className="flex md:mt-10 md:w-11/12 xl:w-full text-white justify-start items-center ">
-            <div className=" w-1/3    md:flex hidden   justify-end sm:w-1/12 md:w-2/3">
+      <div className="flex md:mt-10 mt-5 md:w-11/12 xl:w-full text-white justify-start items-center ">
+            <div className=" w-1/3    md:flex    justify-end sm:w-1/12 md:w-2/3">
               <img
                 src="images/3.png"
                 alt="Picture of the author"
@@ -341,6 +472,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+
+        
         <div
           className="  grid place-items-center sm:place-items-start container "
           id="Subscribe"
