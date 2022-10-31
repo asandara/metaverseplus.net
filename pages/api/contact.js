@@ -1,39 +1,72 @@
-import nodemailer from "nodemailer";
+export default function (req, res) {
 
-export default function handler(req, res) {
-  sendEmail(req.body);
-  res.status(200).json({ success: true });
-}
-async function sendEmail(body) {
+  
+  const express = require("express");
+
+  const cors = require("cors");
+  const app = express();
+  app.use(cors());
+  app.use(express.json());
+
+
+
+  const { google } = require('googleapis');
+
+  const { OAuth2 } = google.auth;
+
+
+
+  const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground';
+
+  const oauth2Client = new OAuth2(
+    process.env.GMAIL_CLIENTID,
+    process.env.GMAIL_CLIENTSECRET,
+    OAUTH_PLAYGROUND
+  );
+  
+    oauth2Client.setCredentials({
+      refresh_token: process.env.GMAIL_RFRESHTOKEN,
+    });
+    const accessToken = oauth2Client.getAccessToken();
+
+  let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: "info@metaverseplus.studio",
-      pass: "@2zzpWE6*D3DhinoD!h",
-    },
+    port: 465,    
+    host: "smtp.gmail.com",
+    secure: true,
+       auth: {
+        type: 'OAuth2',
+      user: process.env.GMAIL_ACC,
+      clientId: process.env.GMAIL_CLIENTID,
+      clientSecret: process.env.GMAIL_CLIENTSECRET,
+      refreshToken: process.env.GMAIL_RFRESHTOKEN,
+      accessToken: process.env.GMAIL_ACCESSTOKEN,
+      accessToken,
+            
+         }
   });
+  
 
-  const mailOptions = {
-    from: "info@metaverseplus.studio",
-    to: "info@metaverseplus.studio",
-    subject: "Contact Metaverse Plus",
-    html: `
-    <td align="left" class="esd-block-text es-p20t es-p10b">
-    <p>Hi Metaverse Plus,<br><br></p>
-    <p>
-    ${body.message}
-    <br></p>
-</td>
-    `,
+
+  const mailData = {
+      from: 'info@metaverseplus.studio',
+      to: 'info@metaverseplus.studio',
+      subject: `${req.body.email}`,
+      text: req.body.message + " | Hello: " + req.body.email,
+      html: `<div>${req.body.message}</div><p>Massage send by : ${req.body.email}</p>`
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
+
+  transporter.sendMail(mailData, function (err, info)  {
+    if (err) {
+      console.log(err);
+      res.send("error" + JSON.stringify(err));
     } else {
-      console.log("Email sent: " + info.response);
+      console.log("Email success");
+      res.send("success");
     }
-  });
+});
+
+
+ 
 }

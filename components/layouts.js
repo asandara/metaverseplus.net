@@ -162,6 +162,9 @@ export default function Layout({ children, title, description }) {
   function is_Email(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
+
+
+  const [isContactPressed, setIsContactPressed] = React.useState(false);
   async function contact() {
     if (is_Empty(emailContact) || is_Empty(messageContact)) {
       errorMessage("Please fill all fields", true);
@@ -171,6 +174,8 @@ export default function Layout({ children, title, description }) {
       errorMessage("Please enter a valid email", true);
       return;
     }
+
+    setIsContactPressed(true)
     const res = await fetch(window.location.origin + "/api/contact", {
       body: JSON.stringify({
         email: emailContact,
@@ -181,11 +186,13 @@ export default function Layout({ children, title, description }) {
       },
       method: "POST",
     });
+    setIsContactPressed(false)
     errorMessage("Thank you for your request !", false);
     setIsOpen2(false);
     setEmailContact(null);
     setMessageContact(null);
   }
+
   // end nashwan.........................................................
   const [opacity, setOpacity] = useState("bg-opacity-0");
   const handleScroll = () => {
@@ -539,13 +546,13 @@ export default function Layout({ children, title, description }) {
                       {255 - currentLenghtNow}
                     </span>
                   </div>
-                  <button
+                  <button disabled={isContactPressed}
                     onClick={() => {
                       contact();
                     }}
-                    className="p-4 mt-4 md:mt-20 outline-none rounded text-white bg-purple-600 w-full"
+                    className={`${isContactPressed?"bg-purple-400 text-white":"bg-purple-600 text-white"} p-4 mt-4 md:mt-20 outline-none rounded   w-full`}
                   >
-                    Send message
+                    {isContactPressed?"Please wait":"Send message"}
                   </button>
                 </div>
               </div>
