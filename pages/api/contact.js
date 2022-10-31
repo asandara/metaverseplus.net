@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default async function (req, res) {
 
   
   const express = require("express");
@@ -31,8 +31,8 @@ export default function (req, res) {
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
-    port: 587,    
     host: "smtp.gmail.com",
+    port: 465,
     secure: true,
        auth: {
         type: 'OAuth2',
@@ -57,7 +57,11 @@ export default function (req, res) {
   };
 
 
-  transporter.sendMail(mailData, function (err, info)  {
+
+
+
+await new Promise((resolve, reject) => {
+  transporter.sendMail(mailData, (err, info) => {
     if (err) {
       console.log(err);
       res.send("error" + JSON.stringify(err));
@@ -65,8 +69,8 @@ export default function (req, res) {
       console.log("Email success");
       res.send("success");
     }
+  });
 });
-
 
  
 }
