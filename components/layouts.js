@@ -552,7 +552,7 @@ export default function Layout({ children, title, description }) {
                     }}
                     className={`${isContactPressed?"bg-purple-400 text-white":"bg-purple-600 text-white"} p-4 mt-4 md:mt-20 outline-none rounded   w-full`}
                   >
-                    {isContactPressed?"Please wait":"Send message"}
+                    {isContactPressed?"Please wait..":"Send message"}
                   </button>
                 </div>
               </div>
