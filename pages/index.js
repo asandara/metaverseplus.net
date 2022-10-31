@@ -22,7 +22,7 @@ export default function Home() {
     }
     if (isError == false) {
       enqueueSnackbar(message, {
-        variant: "success",
+        variant: "success!",
       });
     }
   };
