@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Loading from "../components/loading/Loading";
 import React, { useState, useEffect } from "react";
-import { useRouter, Router } from "next/router";
+import { useRouter } from "next/router";
 import { SnackbarProvider } from "notistack";
 import { ChakraProvider } from "@chakra-ui/react";
 

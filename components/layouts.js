@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 import axios from "axios";
 import Modal from "react-modal";
 import { useSnackbar } from "notistack";
+import emailjs from "@emailjs/browser";
+
 import {
   Modal as M,
   ModalOverlay,
@@ -65,7 +67,6 @@ const customStyles2 = {
 Modal.setAppElement("#rooot");
 
 export default function Layout({ children, title, description }) {
-  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [isDisable, setisDisable] = useState(false);
   const [email, setEmail] = useState("");
@@ -74,6 +75,8 @@ export default function Layout({ children, title, description }) {
   function openModal() {
     setIsOpen(true);
   }
+
+  const form = useRef();
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
@@ -130,6 +133,7 @@ export default function Layout({ children, title, description }) {
       setNavbarOpen(false);
       enableBodyScroll(targetElement);
     }
+    contact;
   };
   useEffect(() => {
     settargetElement(document.querySelector("#rooot"));
@@ -163,9 +167,9 @@ export default function Layout({ children, title, description }) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-
   const [isContactPressed, setIsContactPressed] = React.useState(false);
-  async function contact() {
+
+  async function sendContactEmail(e) {
     if (is_Empty(emailContact) || is_Empty(messageContact)) {
       errorMessage("Please fill all fields", true);
       return;
@@ -175,18 +179,26 @@ export default function Layout({ children, title, description }) {
       return;
     }
 
-    setIsContactPressed(true)
-    const res = await fetch(window.location.origin + "/api/contact", {
-      body: JSON.stringify({
-        email: emailContact,
-        message: messageContact,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-    setIsContactPressed(false)
+    setIsContactPressed(true);
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7mcdf86",
+        "template_557zmh4",
+        form.current,
+        "kzWO2Y5PTpOh6aMmh"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    setIsContactPressed(false);
     errorMessage("Thank you for your request !", false);
     setIsOpen2(false);
     setEmailContact(null);
@@ -234,6 +246,7 @@ export default function Layout({ children, title, description }) {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, true);
   });
+
   return (
     <div>
       <Head>
@@ -241,7 +254,7 @@ export default function Layout({ children, title, description }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
         <link rel="icon" href="/meta.png" />
-               <meta
+        <meta
           name="keywords"
           content="Gaming , Game , Metaverse battle game , Metaverse , Metaverse Game , MBG , Blockchain , Coin , Game Studio , Unreal Engine , Metaverse Plus , Marketplace,
           Information Technology Company"
@@ -286,7 +299,10 @@ export default function Layout({ children, title, description }) {
                   </h6>
                 </Link>
                 <Link href="/our-services ">
-                  <h6 className="cursor-pointer hover:text-purple-300" style={{ fontSize: "17px" }}>
+                  <h6
+                    className="cursor-pointer hover:text-purple-300"
+                    style={{ fontSize: "17px" }}
+                  >
                     Our services
                   </h6>
                 </Link>
@@ -327,7 +343,7 @@ export default function Layout({ children, title, description }) {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokewidth="2"
+                      strokeWidth="2"
                       d="M4 6h16M4 12h16M4 18h16"
                     ></path>
                   </svg>
@@ -515,7 +531,7 @@ export default function Layout({ children, title, description }) {
                 </svg>
               </button>
               <div className="h-max pb-10 mt-40 xl:h-full">
-                <div className="w-full">
+                <form ref={form} onSubmit={sendContactEmail} className="w-full">
                   <p className="text-white mt-20 md:mt-0 text-2xl font-extrabold">
                     Contact us
                   </p>
@@ -526,6 +542,7 @@ export default function Layout({ children, title, description }) {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
                     placeholder="Your Email"
                     onChange={(e) => setEmailContact(e.target.value)}
                     className="w-full p-4 border-b-1 border-white bg-transparent text-white outline-none"
@@ -533,6 +550,7 @@ export default function Layout({ children, title, description }) {
                   <div className="flex items-center border-b-1 my-10 border-white ">
                     <input
                       id="message"
+                      name="message"
                       onChange={(e) => {
                         setCurrentLenghtNow(e.target.value.length);
                         setMessageContact(e.target.value);
@@ -546,15 +564,17 @@ export default function Layout({ children, title, description }) {
                       {255 - currentLenghtNow}
                     </span>
                   </div>
-                  <button disabled={isContactPressed}
-                    onClick={() => {
-                      contact();
-                    }}
-                    className={`${isContactPressed?"bg-purple-400 text-white":"bg-purple-600 text-white"} p-4 mt-4 md:mt-20 outline-none rounded   w-full`}
+                  <button
+                    disabled={isContactPressed}
+                    className={`${
+                      isContactPressed
+                        ? "bg-purple-400 text-white"
+                        : "bg-purple-600 text-white"
+                    } p-4 mt-4 md:mt-20 outline-none rounded   w-full`}
                   >
-                    {isContactPressed?"Please wait..":"Send message"}
+                    {isContactPressed ? "Please wait.." : "Send message"}
                   </button>
-                </div>
+                </form>
               </div>
             </ModalBody>
           </ModalContent>
