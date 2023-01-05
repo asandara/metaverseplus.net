@@ -28,14 +28,18 @@ export default async function handler(req, res) {
         .status(500)
         .json({ message: "please input an email", isError: true });
     }
-    const redis = new Redis(
-      "redis://On:iWMzCa2Y0teA58gy9xXt8q1K06snObgh@redis-16406.c293.eu-central-1-1.ec2.cloud.redislabs.com:16406"
-    );
+
+    const redis = new Redis({
+      host: "redis-14327.c14.us-east-1-2.ec2.cloud.redislabs.com",
+      port: 14327,
+      password: "JPQX42ByjyctVIQ4Ep2FiR2do0kZoQTM",
+      maxRetriesPerRequest: 3,
+    });
+
     let data = {
       email: req.body.email.toLowerCase(),
     };
     let isError = false;
-    let returnData = "";
 
     let emailArr = [];
     await redis.get("emails", function (err, result) {
@@ -51,9 +55,11 @@ export default async function handler(req, res) {
         emailArr = data ? data : [];
       }
     });
+
     let nanoID = nanoid();
 
     const emailExists = emailArr.find((e) => e.email === data.email);
+
     if (emailExists) {
       redis.disconnect();
       return res
@@ -78,6 +84,7 @@ export default async function handler(req, res) {
       .json({ message: "Please wait , and try again after 30 minute" });
   }
 }
+
 async function sendEmail(to) {
   const transporter = nodemailer.createTransport({
     host: "mail.privateemail.com",
