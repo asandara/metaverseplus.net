@@ -27,9 +27,9 @@ const subscriptionHandler = async (req, res) => {
     }
 
     const redis = new Redis({
-      host: "redis-13940.c13.us-east-1-3.ec2.cloud.redislabs.com",
-      port: 13940,
-      password: "6Cyum3PbRG9oa7XBTd5iclD2oZP8qXZJ",
+      host: "redis-14327.c14.us-east-1-2.ec2.cloud.redislabs.com",
+      port: 14327,
+      password: "JPQX42ByjyctVIQ4Ep2FiR2do0kZoQTM",
     });
 
     let data = {

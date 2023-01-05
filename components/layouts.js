@@ -133,7 +133,7 @@ export default function Layout({ children, title, description }) {
       setNavbarOpen(false);
       enableBodyScroll(targetElement);
     }
-    contact;
+    sendContactEmail;
   };
   useEffect(() => {
     settargetElement(document.querySelector("#rooot"));
