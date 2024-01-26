@@ -3,18 +3,7 @@ import Link from "next/link";
 function SocialIcon() {
   return (
     <div className="flex  space-x-5 justify-start md:justify-center mt-5">
-      <Link href="https://twitter.com/Metaverseplus_" target="_blank" className="cursor-pointer">
-        <div
-          width="38"
-          height="39"
-          viewBox="0 0 38 39"
-          className="w-9 h-9 bg-white rounded-full flex justify-center items-center cursor-pointer"
-        >
-      
-        <h1 className="text-black text-lg font-bold ">X</h1>  
-   
-        </div>
-      </Link>
+
 
 
       <Link href="https://t.me/+9710501925188" target="_blank">
