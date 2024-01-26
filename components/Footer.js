@@ -52,7 +52,7 @@ const Footer = (props) => {
           <h1 className="font-bold">Headquater :</h1>{" "}
           <div className="h-1"></div>
           <h1 className="text-sm">
-            Prism Tower- Al Mustaqbal Street - Business Bay
+          Office 4001, 40th Floor, Citadel Tower Business Bay
             <br /> Dubai - United Arab Emirates
           </h1>
           <div className="h-5"></div>
