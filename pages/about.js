@@ -24,14 +24,15 @@ const AboutUs = () => {
         </h1>
         <br />
         <p className="text-left">
-          Establishing a virtual world is one of the objectives of humanity in
+          Establishing a virtual world is one of the ob
+          jectives of humanity in
           the coming future. Obviously, there will be a lot of tough and complex
           paths will show up that should be passed. Passing these ways needs a
           lot of effort. Metaverse Plus is working to achieve this goal.
           <br />
           <br />
           <br />
-          <br /> Metaverse is a new technology company endeavoring to accomplish
+          <br /> Metaverse Plus is a new technology company endeavoring to accomplish
           its goals with the best staff and attempting to solve those problems
           and difficulties that have seemed impossible in the past. We know that
           the technology universe is continuously involved in enhancement,
@@ -40,7 +41,7 @@ const AboutUs = () => {
           help you pass long and complex ways and reach the success point.
           <br />
           <br />
-          <br /> Sectors that Metaverse plus is concerned about consist of
+          <br /> Sectors that Metaverse Plus is concerned about consist of
           several technologies that could be the dominant features in the future
           of the technology field and all over the world. If you consider your
           works in the related sectors, the best decision you can make is to
