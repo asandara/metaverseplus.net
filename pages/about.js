@@ -19,7 +19,7 @@ const AboutUs = () => {
       <br />
       <br />
       <div className="container w-full">
-        <h1 className="font-bold text-white text-left ">
+        <h1 className="font-bold text-white text-left">
           Read more about us ,
         </h1>
         <br />

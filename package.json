@@ -20,7 +20,7 @@
     "axios": "^0.25.0",
     "bluebird": "^3.7.2",
     "body-scroll-lock": "^4.0.0-beta.0",
-    "cors": "^2.8.5",
+    "cors": "^2.8.5", 
     "emailjs": "^4.0.1",
     "express": "^4.18.2",
     "framer-motion": "^6.2.8",
